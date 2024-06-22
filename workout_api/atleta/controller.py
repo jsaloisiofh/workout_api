@@ -75,6 +75,8 @@ async def query(db_session: DatabaseDependency) -> list[AtletaOut]:
     return [AtletaOut.model_validate(atleta) for atleta in atletas]
 
 
+
+
 @router.get(
     '/{id}', 
     summary='Consulta um Atleta pelo id',
@@ -140,3 +142,4 @@ async def delete(id: UUID4, db_session: DatabaseDependency) -> None:
     
     await db_session.delete(atleta)
     await db_session.commit()
+# https://github.com/digitalinnovationone/workout_api/issues/5#issue-2301617078
